@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Trường Đại Học Công Nghệ Thông Tin</title>
+        <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border: 3px solid #4CAF50;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+            padding: 20px;
+            border-bottom: 2px solid #333;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .university-name {
+            flex: 1;
+        }
+
+        .university-name h1 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Navigation Styles */
+        nav {
+            background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+            padding: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            flex: 1;
+            border-right: 1px solid rgba(255,255,255,0.3);
+        }
+
+        nav ul li:last-child {
+            border-right: none;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 15px 20px;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        /* Main Content Area */
+        .main-content {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        main {
+            flex: 2;
+        }
+
+        .program-section {
+            background: #f9f9f9;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .program-section h2 {
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .program-section p {
+            color: #666;
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        .department {
+            color: #2196F3;
+            font-weight: bold;
+            float: right;
+            margin-top: 10px;
+        }
+
+        /* Aside Styles */
+        aside {
+            flex: 1;
+            background: linear-gradient(135deg, #4DD0E1 0%, #26C6DA 100%);
+            border-radius: 8px;
+            padding: 20px;
+            color: white;
+            height: fit-content;
+        }
+
+        aside h3 {
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        aside p {
+            font-size: 14px;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-top: 2px solid #4CAF50;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 5px;
+            }
+
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .university-name h1 {
+                font-size: 20px;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                border-right: none;
+                border-bottom: 1px solid rgba(255,255,255,0.3);
+            }
+
+            .main-content {
+                flex-direction: column;
+            }
+
+            aside {
+                order: -1;
+            }
+        }
+
+        .program-section {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .program-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        aside {
+            animation: slideInRight 1s ease-out;
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <div class="logo">
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/3/38/Logo_UIT_updated.jpg"
+                        alt="Logo UIT - Trường Đại Học Công Nghệ Thông Tin">
+                </div>
+                <div class="university-name">
+                    <h1>Trường Đại Học Công Nghệ Thông Tin</h1>
+                </div>
+            </header>
+
+            <nav>
+                <ul>
+                    <li><a href="#home">Trang chủ</a></li>
+                    <li><a href="#info">Thông tin</a></li>
+                    <li><a href="#about">Giới thiệu</a></li>
+                    <li><a href="#admission">Tuyển sinh</a></li>
+                    <li><a href="#research">Nghiên cứu</a></li>
+                </ul>
+            </nav>
+
+            <div class="main-content">
+                <main>
+                    <section class="program-section">
+                        <h2>Chương trình tiên tiến</h2>
+                        <p>Chương trình đào tạo tiên tiến "là dự án quốc gia do
+                            Bộ GD&ĐT</p>
+                        <div class="department">Khoa HTTT</div>
+                    </section>
+
+                    <section class="program-section">
+                        <h2>Ngành An Toàn Thông Tin</h2>
+                        <p>Chương trình đào tạo kỹ sư tài năng ngành An toàn
+                            Thông tin cho phép sinh viên tiếp cận với một chương
+                            trình đào tạo tiên tiến, thực tập với những công
+                            nghệ hiện đại, được sử dụng những tài liệu mới cập
+                            nhật và học tập trong điều kiện chất lượng cao.</p>
+                        <div class="department">Khoa MMT</div>
+                    </section>
+                </main>
+
+                <aside>
+                    <h3>THÔNG TIN MỚI NHẤT VỀ KỲ THI THPT QUỐC GIA 2015</h3>
+                    <p>Sáng 10/12, Phó Cục trưởng Cục Khảo thí&Kiểm định chất
+                        lượng, Bộ GD-ĐT Trần Văn Nghĩa tiếp tục giải đáp hàng
+                        loạt câu hỏi nóng liên quan đến kỳ thi THPT quốc gia năm
+                        2015.</p>
+                </aside>
+            </div>
+
+            <footer>
+                <p>Copyright 2014</p>
+            </footer>
+        </div>
+    </body>
+</html>
