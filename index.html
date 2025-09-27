@@ -3,66 +3,16 @@
     <head>
         <meta charset="UTF-8">
         <title>Giới thiệu bản thân - Nguyễn Quốc Dũng</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                max-width: 800px;
-                margin: 0 auto;
-                padding: 20px;
-                line-height: 1.6;
-                background-color: #f5f5f5;
-            }
-            .container {
-                background-color: white;
-                padding: 30px;
-                border-radius: 10px;
-                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            }
-            h1 {
-                color: #2c3e50;
-                text-align: center;
-                border-bottom: 3px solid #3498db;
-                padding-bottom: 10px;
-            }
-            h2 {
-                color: #34495e;
-                margin-top: 30px;
-            }
-            h3 {
-                color: #7f8c8d;
-                margin-top: 20px;
-            }
-            h4 {
-                color: #95a5a6;
-                margin-top: 15px;
-            }
-            ul {
-                margin: 10px 0;
-                padding-left: 20px;
-            }
-            li {
-                margin: 5px 0;
-            }
-            .contact-link {
-                color: #3498db;
-                text-decoration: none;
-            }
-            .contact-link:hover {
-                text-decoration: underline;
-            }
-            .profile-image {
-                width: 150px;
-                height: 150px;
-                border-radius: 50%;
-                margin: 20px auto;
-                display: block;
-                border: 3px solid #3498db;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="styles.css">
     </head>
     <body>
         <div class="container">
-            <h1>Giới thiệu bản thân</h1>
+            <nav>
+                <a href="#gioi-thieu">Giới thiệu bản thân</a>
+                <a href="#lien-he">Gửi thông tin và liên hệ cùng tôi</a>
+            </nav>
+
+            <h1 id="gioi-thieu">Giới thiệu bản thân</h1>
 
             <img
                 src="https://scontent.fhan4-6.fna.fbcdn.net/v/t39.30808-6/327354459_5797275546988882_2943704683994959617_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=xs5PtJ7y25wQ7kNvwE62qaV&_nc_oc=AdkTGn9twkJSiMtLwVvwGX5P-2MHxTdEPzJhHq004JNkcdhC_LHoPFvQEocaymrqUIg&_nc_zt=23&_nc_ht=scontent.fhan4-6.fna&_nc_gid=1h6PqDwr4LTm6TTngzCIWA&oh=00_AfbnOLg2uwfFP8zppGS_V6GUNxc8TEhocGnO2s8V671BuA&oe=68DC119E"
@@ -109,17 +59,85 @@
             </ul>
 
             <h2>Mục tiêu của bản thân</h2>
-            <ul>
-                <li>Ra Trường :))</li>
-            </ul>
+            <table>
+                <tr>
+                    <th>Mục tiêu</th>
+                    <th>Thời hạn</th>
+                    <th>Hoàn thành</th>
+                </tr>
+                <tr>
+                    <td>Trung bình điểm môn web đạt 8.0</td>
+                    <td>12/12/2025</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>Đạt chứng chỉ ngoại ngữ đủ chuẩn tốt nghiệp</td>
+                    <td>01/03/2026</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>Chọn được công ty với vị trí fullstack developer</td>
+                    <td>15/06/2026</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+            </table>
 
-            <h2>Gửi thông tin và giao lưu cùng tôi</h2>
+            <h2 id="lien-he">Gửi thông tin và giao lưu cùng tôi</h2>
+
+            <form class="contact-form">
+                <h3>Gửi thông tin và giao lưu cùng tôi</h3>
+
+                <label for="fullname">Họ và tên:</label><br>
+                <input type="text" id="fullname" name="fullname"><br><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email"><br><br>
+
+                <label for="message">Tin nhắn:</label><br>
+                <textarea id="message" name="message" rows="4"
+                    cols="50"></textarea><br><br>
+
+                <label>Giới tính:</label><br>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Nam</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Nữ</label><br><br>
+
+                <label>Sở thích:</label><br>
+                <input type="checkbox" id="music" name="hobbies" value="music">
+                <label for="music">Nghe nhạc</label>
+                <input type="checkbox" id="swimming" name="hobbies"
+                    value="swimming">
+                <label for="swimming">Bơi lội</label>
+                <input type="checkbox" id="sea" name="hobbies" value="sea">
+                <label for="sea">Biển</label><br><br>
+
+                <label for="major">Ngành:</label><br>
+                <select id="major" name="major">
+                    <option value="computer-science">Khoa học Máy tính</option>
+                    <option value="software-engineering">Kỹ thuật Phần
+                        mềm</option>
+                    <option value="information-systems">Hệ thống Thông
+                        tin</option>
+                    <option value="network-security">An toàn Mạng</option>
+                </select><br><br>
+
+                <input type="submit" value="Gửi" class="submit-btn">
+            </form>
+
+            <h3>Liên hệ trực tiếp</h3>
             <ul>
                 <li><strong>Facebook:</strong> <a
                         href="https://www.facebook.com/nguyen.qquoc.dung"
                         class="contact-link"
                         target="_blank">https://www.facebook.com/nguyen.qquoc.dung</a></li>
             </ul>
+
+            <footer>
+                <p>@2025 19521396</p>
+                <p>Trang web được tạo bởi Nguyễn Quốc Dũng - Sinh viên Kỹ thuật
+                    Phần mềm</p>
+            </footer>
         </div>
     </body>
 </html>
