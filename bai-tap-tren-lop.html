@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form Thông Tin Liên Hệ Nhóm</title>
+        <style>
+        .container {
+            width: 480px;
+            margin: auto;
+            border: 2px solid darkcyan;
+            padding: 20px;
+            font-size: 22px;
+            background-color: white;
+        }
+        
+        h2 {
+            color: red;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        input[type="text"], select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        
+        .button-group {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        button {
+            width: 150px;
+            padding: 10px;
+            background-color: darkorange;
+            border: none;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+            margin: 0 10px;
+        }
+        
+        button:hover {
+            background-color: #cc7700;
+        }
+        
+        .section-title {
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        input:required {
+            border-left: 3px solid red;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2>THÔNG TIN LIÊN HỆ NHÓM</h2>
+
+            <form action="GroupInfo.php" method="post"
+                onsubmit="return validateForm()">
+                <div class="form-group">
+                    <label for="tennhom">Tên nhóm:</label>
+                    <input type="text" id="tennhom" name="tennhom"
+                        placeholder="Nhập tên của nhóm bạn" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="nhomtruong">Nhóm trưởng:</label>
+                    <input type="text" id="nhomtruong" name="nhomtruong"
+                        placeholder="Nhập họ tên người nhóm trưởng" required>
+                </div>
+
+                <div class="section-title">Trang web giới thiệu đồ án của
+                    nhóm</div>
+
+                <div class="form-group">
+                    <label for="nenBang">Nền tảng:</label>
+                    <select id="nenbang" name="nenbang" required>
+                        <option value>Chọn các nền tảng trang web của
+                            nhóm</option>
+                        <option value="wordpress">WordPress</option>
+                        <option value="google">Google</option>
+                        <option value="wix">Wix</option>
+                        <option value="github">GitHub</option>
+                        <option value="khac">Khác</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="diachi">Địa chỉ:</label>
+                    <input type="text" id="diachi" name="diachi"
+                        placeholder="Nhập địa chỉ trang web">
+                </div>
+
+                <div class="form-group">
+                    <label for="ykien">Ý kiến khác của nhóm:</label>
+                    <textarea id="ykien" name="ykien"
+                        placeholder="Nhập ý kiến khác của nhóm bạn"></textarea>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit">Submit</button>
+                    <button type="button" onclick="clearForm()">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+        <script>
+        function validateForm() {
+            var tenNhom = document.getElementById('tennhom').value.trim();
+            var nhomTruong = document.getElementById('nhomtruong').value.trim();
+            
+            if (tenNhom === '' || nhomTruong === '') {
+                alert('Vui lòng nhập thông tin đầy đủ');
+                return false;
+            }
+            
+            return true;
+        }
+        
+        function clearForm() {
+            document.getElementById('tennhom').value = '';
+            document.getElementById('nhomtruong').value = '';
+            document.getElementById('nenbang').value = '';
+            document.getElementById('diachi').value = '';
+            document.getElementById('ykien').value = '';
+        }
+    </script>
+    </body>
+</html>
